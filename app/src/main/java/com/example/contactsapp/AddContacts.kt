@@ -53,8 +53,8 @@ class AddContacts : AppCompatActivity() {
             val intent = Intent(this, AddContacts::class.java)
             startActivity(intent)
         }
-        Toast.makeText(this, "Contact added successfully", Toast.LENGTH_SHORT).show();
-        finish();
+//        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+//        finish();
     }
 }
 
