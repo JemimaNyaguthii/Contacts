@@ -74,6 +74,5 @@ class MainActivity : AppCompatActivity() {
         val contactAdapter = ContactsRvAdapter(names)
         binding.rvContacts.layoutManager = LinearLayoutManager(this)
         binding.rvContacts.adapter = contactAdapter
-
     }
 }
