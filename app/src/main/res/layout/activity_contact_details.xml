@@ -14,55 +14,57 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fcc2d7"
-        >
+        android:layout_height="match_parent"
+        android:background="#fcc2d7">
 
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="104dp"
             android:layout_height="37dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivAvatar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.214"
+            app:layout_constraintVertical_bias="0.508"
             tools:text="Name" />
 
         <TextView
             android:id="@+id/tvPhoneNumber"
-            android:layout_width="195dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="333dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="28dp"
+            android:drawableStart="@drawable/baseline_message_24"
+            android:drawableEnd="@drawable/baseline_phone_24"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/ivAvatar"
-            app:layout_constraintTop_toBottomOf="@+id/tvName"
-            tools:text="Phone Number" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
+            tools:text="    Phone Number                         " />
 
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="203dp"
             android:layout_height="37dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber"
             tools:text="Email Address" />
 
         <ImageView
             android:id="@+id/ivAvatar"
-            android:layout_width="149dp"
-            android:layout_height="144dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="13dp"
+            android:layout_width="153dp"
+            android:layout_height="153dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/patience" />
+            app:srcCompat="@drawable/avatar" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
