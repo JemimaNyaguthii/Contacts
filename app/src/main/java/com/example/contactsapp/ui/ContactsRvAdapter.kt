@@ -9,11 +9,12 @@ import com.example.contactsapp.model.ContactData
 import com.example.contactsapp.databinding.ContactListItemBinding
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
+import java.io.File
 
-class ContactsRvAdapter(var contactData: List<ContactData>,var context: Context):RecyclerView.Adapter<ContactsRvAdapter.ContactsViewHolder>(){
+class ContactsRvAdapter(private var contactData: List<ContactData>, private var context: Context):RecyclerView.Adapter<ContactsRvAdapter.ContactsViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
         val binding =ContactListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ContactsRvAdapter.ContactsViewHolder(binding)
+        return ContactsViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         val currentContact = contactData[position]
@@ -25,7 +26,9 @@ class ContactsRvAdapter(var contactData: List<ContactData>,var context: Context)
         if (currentContact.image.isNotBlank()){
 
         Picasso.get()
-            .load(currentContact.image)
+            .load(
+                File(currentContact.image)
+            )
             .resize(80 ,80)
             .centerInside()
             .transform(CropCircleTransformation())
@@ -41,7 +44,6 @@ class ContactsRvAdapter(var contactData: List<ContactData>,var context: Context)
     override fun getItemCount(): Int {
         return contactData.size
     }
-
     class ContactsViewHolder(var binding: ContactListItemBinding):RecyclerView.ViewHolder(binding.root)
 
 }

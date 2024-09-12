@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
             val intent =Intent(this, AddContacts::class.java)
             startActivity(intent)
         }
-
-
     }
 
     override fun onResume() {

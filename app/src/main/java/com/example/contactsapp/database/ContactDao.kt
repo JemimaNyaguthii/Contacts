@@ -1,8 +1,8 @@
 package com.example.contactsapp.database
 
-import android.provider.ContactsContract.Contacts
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -19,5 +19,6 @@ interface ContactDao {
     @Query("SELECT * FROM ContactData WHERE contactId = :contactId")
     fun getContactById(contactId: Int): LiveData<ContactData>
 
-
+    @Delete
+    suspend fun deleteContactById(contact: ContactData)
 }

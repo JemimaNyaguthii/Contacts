@@ -1,8 +1,7 @@
 package com.example.contactsapp.repository
 
-import android.provider.ContactsContract.Contacts
 import androidx.lifecycle.LiveData
-import com.assignment.contatslist.database.ContactDb
+import com.example.contactsapp.database.ContactDb
 import com.example.contactsapp.MyContactsApp
 import com.example.contactsapp.model.ContactData
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +11,6 @@ class ContactsRepository {
     val database = ContactDb.getDataBase(MyContactsApp.appContext)
 
    suspend fun saveContact(contact:ContactData){
-//        switching to ui thread
         withContext(Dispatchers.IO){
             database.getContactDao().insertContact(contact)
         }
@@ -22,6 +20,11 @@ class ContactsRepository {
     }
     fun getContactById(contactId:Int):LiveData<ContactData>{
         return database.getContactDao().getContactById(contactId)
+    }
+    suspend fun deleteContactById(contact: ContactData) {
+        withContext(Dispatchers.IO) {
+            database.getContactDao().deleteContactById(contact)
+        }
     }
 
 

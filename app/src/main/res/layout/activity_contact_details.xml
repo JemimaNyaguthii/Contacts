@@ -13,7 +13,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="406dp"
         android:layout_height="match_parent"
         android:background="#fcc2d7">
 
@@ -22,13 +22,13 @@
             android:id="@+id/tvName"
             android:layout_width="104dp"
             android:layout_height="37dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="148dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivAvatar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
             tools:text="Name" />
 
         <TextView
@@ -36,19 +36,19 @@
             android:layout_width="333dp"
             android:layout_height="36dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:drawableStart="@drawable/baseline_message_24"
             android:drawableEnd="@drawable/baseline_phone_24"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
             tools:text="    Phone Number                         " />
 
         <TextView
             android:id="@+id/tvEmail"
-            android:layout_width="203dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="210dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/avatar" />
 
-
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="4dp"
+            android:padding="8dp"
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 

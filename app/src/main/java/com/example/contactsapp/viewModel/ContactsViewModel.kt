@@ -21,4 +21,10 @@ import kotlinx.coroutines.launch
          fun getContacts():LiveData<List<ContactData>>{
             return contactsRepo.getAllContacts()
         }
+
+        fun deleteContact(contact: ContactData) {
+            viewModelScope.launch {
+                contactsRepo.deleteContactById(contact)
+            }
+        }
     }
